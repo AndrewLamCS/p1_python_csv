@@ -14,7 +14,7 @@ def printCSV(file_path):
             #Iterate over each line in the file
             for row in file:
                 #Print each line
-                print(file.readline())
+                print(row)
     #If the specified file is not found, trigger FileNotFoundError
     except FileNotFoundError:
             print(f"Error: File '{file_path}' not found.")
