@@ -9,6 +9,7 @@ def printCSV(file_path):
     """
     try:
         # Attempt to open the file specified by file_path in read mode
+        #with statement includes __exit()__ method to close the file when operation is complete
         with open(file_path) as file:
             #Iterate over each line in the file
             for row in file:
