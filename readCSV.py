@@ -9,11 +9,11 @@ def printCSV(file_path):
     """
     try:
         # Attempt to open the file specified by file_path in read mode
-        file = open(file_path, "r")     
-        #Iterate over each line in the file
-        for row in file:
-            #Print each line
-            print(file.readline())
+        with open(file_path) as file:
+            #Iterate over each line in the file
+            for row in file:
+                #Print each line
+                print(file.readline())
     #If the specified file is not found, trigger FileNotFoundError
     except FileNotFoundError:
             print(f"Error: File '{file_path}' not found.")
