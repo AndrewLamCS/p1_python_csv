@@ -13,8 +13,22 @@ def printCSV(file_path):
         with open(file_path) as file:
             #Iterate over each line in the file
             for row in file:
-                #Print each line
-                print(row)
+
+                try:
+                    #Splits row into a list of strings
+                    splitted = row.split(',')
+
+                    #Access first element of list - last name
+                    lastname = splitted[0]
+
+                    #Access second element of list - first name
+                    firstname = splitted[1]
+
+                    #Print each line as formatted string
+                    print(f"Last Name: {lastname}, First Name: {firstname}")
+                except IndexError:
+                    print(f"Error: Row {row} is not in the correct format")
+
     #If the specified file is not found, trigger FileNotFoundError
     except FileNotFoundError:
             print(f"Error: File '{file_path}' not found.")
